@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="program.css">
+    <title>Document</title>
+</head>
+<body>
+ 
+     <div class="inside">
+         <div class="pro">
+             <h2>AND Gate</h2>
+            <textarea name="" id="myInput" cols="40" rows="14" >
+module and_gate(y,a,b);           
+//port declaration
+output y;
+input a,b;
+//Logic
+and x1(y,a,b);
+endmodule
+            </textarea>
+            <img src="and.jpg" alt="" srcset="" width="200px" height="200px">
+           </div>
+         <div  class="pro">
+            <h2>OR Gate</h2>
+           <textarea name="" id="myInput" cols="40" rows="14" >
+module or_gate(y,a,b);
+//port declaration
+output y;
+input a,b;
+//Logic
+or x1(y,a,b);
+endmodule
+           </textarea>
+           <img src="or.jpg" alt="" srcset="" width="200px" height="200px">
+        </div>
+        <div  class="pro">
+            <h2>●Not Gate:</h2>
+           <textarea name="" id="myInput" cols="40" rows="14" >
+module not_gate(y,a);
+//port declaration
+output y;
+input a;
+//Logic
+not x1(y,a);
+endmodule
+           </textarea>
+           <img src="not.jpg" alt="" srcset="" width="200px" height="200px">
+        </div>
+        <div  class="pro">
+            <h2>NAND Gate</h2>
+           <textarea name="" id="myInput" cols="40" rows="14" >
+module nand_gate(y,a,b);
+//port declaration
+output y;
+input a,b;
+//Logic
+nand x1(y,a,b);
+endmodule
+           </textarea>
+           <img src="nand.jpg" alt="" srcset="" width="200px" height="200px">
+        </div>
+        <div  class="pro">
+            <h2>NOR Gate</h2>
+           <textarea name="" id="myInput" cols="40" rows="14" >
+module nor_gate(y,a,b);
+//port declaration
+output y;
+input a,b;
+//Logic
+nor x1(y,a,b);
+endmodule
+           </textarea>
+           <img src="nor.jpg" alt="" srcset="" width="200px" height="200px">
+        </div>
+        <div  class="pro">
+            <h2>XOR Gate</h2>
+           <textarea name="" id="myInput" cols="40" rows="14" >
+module xor_gate(y,a,b);
+//port declaration
+output y;
+input a,b;
+//Logic
+xor x1(y,a,b);
+endmodule
+           </textarea>
+           <img src="xor.jpg" alt="" srcset="" width="200px" height="200px">
+        </div>
+        <div  class="pro">
+            <h2>XNOR Gate</h2>
+           <textarea name="" id="myInput" cols="40" rows="14" >
+module xnor_gate(y,a,b);
+//port declaration
+output y;
+input a,b;
+//Logic
+xnor x1(y,a,b);
+endmodule
+(for gates)
+$monitor($time,"y=%b,a=%b,b=%b",y,a,b);
+           </textarea>
+           <img src="Xnor.jpg" alt="" srcset="" width="200px" height="200px">
+        </div>
+        <div  class="pro">
+            <h2>●Half Adder Using Logic Gates:</h2>
+           <textarea name="" id="myInput" cols="40" rows="14" >
+module HA(sum,carry,a,b);
+//port declaration
+output sum,carry;
+input a,b;
+//logic
+xor  x1(sum,a,b);
+and x2(carry,a,b);
+endmodule
+           </textarea>
+           <img src="half adder using logic gate.jpg" alt="" srcset="" width="200px" height="180px">
+          </div>
+        <div  class="pro">
+            <h2>●Half Adder Using Basic Gates:</h2>
+           <textarea name="" id="myInput" cols="40" rows="14" >
+module HA(sum,carry,a,b);
+//port declaration
+output sum,carry;
+input a,b;
+wire w1,w2,w3,w4;
+//logic
+not x1(w1,a);
+not x2(w2,b);
+and x3(w3,w1,b);
+and x4(w4,a,w2);
+or x5(sum,w3,w4);
+and x6(carry,a,b);
+endmodule
+(for half adder)
+$monitor($time,"sum=%b,carry=%b,a=%b,b=%b",sum,carry,a,b);
+           </textarea>
+           <img src="half adder using basic gate1.jpeg" alt="" srcset="" width="300px" height="200px">
+        </div>
+        <div  class="pro">
+            <h2>●Full Adder Using Logic Gates:</h2>
+           <textarea name="" id="myInput" cols="40" rows="14" >
+module FA(sum,carry,a,b,cin);
+//port declaration
+output sum,carry;
+input a,b,cin;
+wire w1,w2,w3;
+//logic
+xor x1(sum,a,b,cin);
+and x2(w1,a,b);
+and x3(w2,a,cin);
+and x4(w3,b,cin);
+or x5(carry,w1,w2,w3);
+endmodule
+           </textarea>
+           <img src="full adder using logic gate.png" alt="" srcset="" width="300px" height="200px">
+        </div>
+        <div  class="pro">
+            <h2>●Full Adder Using Basic Gates:</h2>
+           <textarea name="" id="myInput" cols="40" rows="14" >
+module FA(sum,carry,a,b,cin);
+//port declaration
+output sum,carry;
+input a,b,cin;
+wire w1,w2,w3,w4,w5,w6,w7,w8,w9,w10;
+//logic
+not x1(w1,a);
+not x2(w2,b);
+not x3(w3,cin);
+and x4(w4,a,w2,w3);
+and x5(w5,w1,w2,cin);
+and x6(w6,a,b,cin);
+and x7(w7,w1,b,w3);
+or x8(sum,w4,w5,w6,w7);
+and x9(w8,a,cin);
+and x10(w9,b,cin);
+and x11(w10,a,b);
+or x12(w8,w9,w10);
+endmodule
+(for full adder)
+$monitor($time,"sum=%b,carry=%b,a=%b,b=%b,cin=%b",sum,carry,a,b,cin);
+           </textarea>
+           <img src="full adder using basic gate.jpeg" alt="" srcset="" width="300px" height="200px">
+        </div>
+        <div  class="pro">
+            <h2>●Half Subtractor Using Logic Gates:</h2>
+           <textarea name="" id="myInput" cols="40" rows="14" >
+module HS(difference,borrow,a,b);
+//port declaration
+output difference,borrow;
+input a,b;
+wire w1;
+//logic
+not x1(w1,a);
+xor x2(difference,a,b);
+and x3(borrow,w1,b);
+endmodule
+           </textarea>
+           <img src="half subtractor using logic gate.jpg" alt="" srcset="" width="300px" height="200px">
+        </div>
+        <div  class="pro">
+            <h2>●Half Subtractor Using Basic Gates:</h2>
+           <textarea name="" id="myInput" cols="40" rows="14" >
+module HS(difference,borrow, a,b);
+//port declaration
+output difference,borrow;
+input a,b;
+wire w1,w2,w3,w4;
+//logic
+not x1(w1,a);
+not x2(w2,b);
+and x3(w3,w1,b);
+and x4(w4,a,w2);
+or x5(difference,w3,w4);
+and x6(borrow,w1,b);
+endmodule
+(for half subtractor)
+$monitor($time,"difference=%b,borrow=%b,a=%b,b=%b",difference,borrow,a,b);
+           </textarea>
+           <img src="half subtractor using basic gate.jpg" alt="" srcset="" width="300px" height="200px">
+        </div>
+        <div  class="pro">
+            <h2>●Full Subtractor Using Basic Gates:</h2>
+           <textarea name="" id="myInput" cols="40" rows="14" >
+module FS(diff,borrow,a,b,bin);
+//port declaration
+output diff,borrow;
+input a,b,bin;
+wire w1,w2,w3,w4,w5,w6,w7,w8,w9,w10;
+//logic
+not x1(w1,a);
+not x2(w2,b);
+not x3(w3,bin);
+and x4(w4,a,w2,w3);
+and x5(w5,w1,w2,bin);
+and x6(w6,a,b,bin);
+and x7(w7,w1,b,w3);
+or x8(diff,w4,w5,w6,w7);
+and x9(w8,w1,b);
+and x10(w9,b,bin);
+and x11(w10,w1,bin);
+or x12(borrow,w8,w9,w10);
+endmodule
+           </textarea>
+           <img src="full subtractor using basic gate.jpeg" alt="" srcset="" width="300px" height="200px">
+        </div>
+        <div  class="pro">
+            <h2>●Full Subtractor Using Logic Gates:</h2>
+           <textarea name="" id="myInput" cols="40" rows="14" >
+module FS(difference,borrow,a,b,bin);
+//port declaration
+output difference,borrow;
+input a,b,bin;
+wire w1,w2,w3,w4,w5;
+//Logic
+xor x1(w2,a,b);
+xor x2(difference,w2,bin);
+not x3(w1,a);
+and x4(w4,w1,b);
+not x5(w3,w2);
+and x6(w5,w3,bin);
+or x7(borrow,w5,w4);
+endmodule
+
+(for full subtractor)
+$monitor($time,"difference=%b,borrow=%b,a=%b,b=%b,bin=%b",difference,borrow,a,b,bin);
+           </textarea>
+           <img src="full subtractor using logic gates.jpg" alt="" srcset="" width="300px" height="200px">
+        </div>
+        <div  class="pro">
+            <h2>●Full Adder Using two Half adders and an OR gate :</h2>
+           <textarea name="" id="myInput" cols="40" rows="14" >
+//Full adder using two half adders
+module fulladder(sum,carry,a,b,cin);
+//port declaration
+output sum,carry;
+input a,b,cin;
+wire w1,w2,w3;
+//Logic
+HA HA0(w1,w2,a,b);
+HA HA1(sum,w3,w1,cin);
+or x1(carry,w3,w2);
+endmodule
+           </textarea>
+           <img src="full adder using two half adders and or gate.jpg" alt="" srcset="" width="400px" height="180px">
+        </div>
+        <div  class="pro">
+            <h2>●Full Subtractor Using two Half Subtractors and an OR gate :</h2>
+           <textarea name="" id="myInput" cols="40" rows="14" >
+//Full subtractor using two half subtractors
+module fullsubtractor(difference,borrow,a,b,c);
+//port declaration
+output difference,borrow;
+input a,b,c;
+wire w1,w2,w3;
+HS HS1(w1,w2,a,b);
+HS HS2(difference,w3,w1,c);
+or x1(borrow,w2,w3);
+endmodule
+           </textarea>
+           <img src="full subtractor using two half subtractor and an or gate.jpg" alt="" srcset="" width="300px" height="180px">
+        </div>
+        <div  class="pro">
+            <h2>●4 BIT RIPPLE CARRY ADDER :</h2>
+           <textarea name="" id="myInput" cols="40" rows="14" >
+module RCA_4BIT(sum,cout,a,b,cin);
+//port declaration
+output [3:0]sum;
+output cout;
+input [3:0]a,b;
+input cin;
+wire c0,c1,c2;
+//Logic
+FA FA0(sum[0],c0,a[0],b[0],cin);
+FA FA0(sum[1],c1,a[1],b[1],c0);
+FA FA0(sum[2],c2,a[2],b[2],c1);
+FA FA0(sum[3],cout,a[3],b[3],c2);
+endmodule
+           </textarea>
+           <img src="4 bit ripple carry.jpg" alt="" srcset="" width="300px" height="200px">
+        </div>
+        <div  class="pro">
+            <h2>●4 BIT RIPPLE CARRY ADDER CUM SUBTRACTOR :</h2>
+           <textarea name="" id="myInput" cols="40" rows="14" >
+module carryACS(sum,cout,a,b,cin);
+//port declaration
+output [3:0]sum;
+output cout;
+input [3:0]a,b;
+input cin;
+wire c0,c1,c2,w1,w2,w3,w4;
+//Logic
+xor x1(w1,cin,b[0]);
+xor x2(w2,cin,b[1]);
+xor x3(w3,cin,b[2]);
+xor x4(w4,cin,b[3]);
+FA FA0(sum[0],c0,a[0],b[0],cin);
+FA FA0(sum[1],c1,a[1],b[1],c0);
+FA FA0(sum[2],c2,a[2],b[2],c1);
+FA FA0(sum[3],cout,a[3],b[3],c2);
+endmodule
+           </textarea>
+           <img src="4 bit ripple carry cum subtractor.jpg" alt="" srcset="" width="300px" height="180px">
+        </div>
+        <div  class="pro">
+            <h2>For 2 I/P</h2>
+           <textarea name="" id="myInput" cols="40" rows="14" >
+#10 a = 0;
+#10 b = 1;
+#10 a = 1;
+#10 b = 0;
+#10 a = 1;
+#10 b = 1;
+           </textarea>
+        </div>
+        <div  class="pro">
+            <h2>For 3 I/P</h2>
+           <textarea name="" id="myInput" cols="40" rows="14" >
+#10 a = 0;
+#10 b = 0;
+#10 cin = 1;
+
+#10 a = 0;
+#10 b = 1;
+#10 cin = 0;
+
+#10 a = 0;
+#10 b = 1;
+#10 cin = 1;
+
+#10 a = 1;
+#10 b = 0;
+#10 cin = 0;
+
+#10 a = 1;
+#10 b = 0;
+#10 cin = 1;
+
+#10 a = 1;
+#10 b = 1;
+#10 cin = 0;
+
+
+#10 a = 1;
+#10 b = 1;
+#10 cin = 1;
+
+(replace cin with bin for full subtractor)
+(replace cin with c for full subtractor using two half subtractors and an or gate)
+           </textarea>
+        </div>
+        <div  class="pro">
+            <h2>For 4 BIT RIPPLE :</h2>
+           <textarea name="" id="myInput" cols="40" rows="14" >
+#10 a = ~a;
+#10 b = ~b;
+#10 cin = ~cin;
+           </textarea>
+        </div>
+   
+     </div>
+
+</body>
+</html>

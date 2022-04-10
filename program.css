@@ -1,0 +1,20 @@
+body{
+    margin: 0;
+    width: 80%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.inside{
+    display: flex;
+    padding: 5px;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.pro{
+ width: 400px;
+ padding: 5px;
+ margin: 10px;
+ height: 510px;
+ border: 1px solid black;
+}
